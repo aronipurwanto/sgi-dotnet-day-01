@@ -1,0 +1,36 @@
+@model CategoryModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Category Add</h2>
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <form asp-controller="Category" asp-action="Save" method="post">
+                <div class="mb-3">
+                    <label asp-for="Id" class="form-label"></label>
+                    <input asp-for="Id" type="text" class="form-control">
+                    <span asp-validation-for="Id" class="text-danger"></span>
+                </div>
+                
+                <div class="mb-3">
+                    <label asp-for="Code" class="form-label"></label>
+                    <input asp-for="Code" type="text" class="form-control">
+                    <span asp-validation-for="Code" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input asp-for="Name" type="text" class="form-control">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

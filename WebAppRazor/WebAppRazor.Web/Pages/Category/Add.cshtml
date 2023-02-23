@@ -1,0 +1,30 @@
+@page
+@model CategoryAddModel
+
+@{
+    Layout = "Shared/_Layout";
+}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2>Category Add</h2>
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <form asp-page="Category/Add" method="post">
+                <div class="mb-3">
+                    <label asp-for="Category.Code" class="form-label"></label>
+                    <input asp-for="Category.Code" type="text" class="form-control">
+                    <span asp-validation-for="Category.Code" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Category.Name" class="form-label"></label>
+                    <input asp-for="Category.Name" type="text" class="form-control">
+                    <span asp-validation-for="Category.Name" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
